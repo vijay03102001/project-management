@@ -1,0 +1,29 @@
+<!-- project-list.component.html -->
+<div class="project-list">
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Project Name</th>
+          <th>Total Budget</th>
+          <th>POs Associated</th>
+          <th>Utilized Amount</th>
+          <th>Remaining Balance</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects">
+          <td>{{ project.projectName }}</td>
+          <td>{{ project.totalBudget | currency }}</td>
+          <td>{{ project.poCount }}</td>
+          <td>{{ project.utilizedAmount | currency }}</td>
+          <td>{{ project.remainingBalance | currency }}</td>
+          <td>
+            <button (click)="editProject(project.id)">Edit</button>
+            <button (click)="deleteProject(project.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>  
+</div>

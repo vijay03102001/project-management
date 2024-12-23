@@ -1,0 +1,118 @@
+.project-list {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #6c757d; /* Dark gray header */
+  color: white;
+  font-size: 16px;
+}
+
+td {
+  font-size: 14px;
+  color: #333;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Alternate row colors */
+}
+
+tbody tr:hover {
+  background-color: #e9ecef; /* Row highlight on hover */
+}
+
+button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+/* Button Styles */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Submit Button */
+button.submit-btn {
+  background-color: #007bff; /* Blue */
+}
+
+button.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Add Button */
+button.add-btn {
+  background-color: #28a745; /* Green */
+}
+
+button.add-btn:hover {
+  background-color: #218838;
+}
+
+/* Edit Button */
+button.edit-btn {
+  background-color: #ffc107; /* Yellow */
+  color: #212529;
+}
+
+button.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+/* Delete Button */
+button.delete-btn {
+  background-color: #dc3545; /* Red */
+}
+
+button.delete-btn:hover {
+  background-color: #bd2130;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

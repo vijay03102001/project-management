@@ -1,0 +1,53 @@
+.main-container{
+    display: flex;
+}
+
+.main-container-content{
+    width: 100%;
+}
+
+/* Styling the navigation bar container */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align to the left */
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #ddd; /* Add border */
+    border-radius: 8px; /* Smooth corners */
+    padding: 10px 20px; /* Add some padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Label styling */
+  nav label {
+    font-size: 16px; /* Increase font size */
+    font-weight: 600; /* Make it bold */
+    color: #333; /* Dark gray text color */
+    margin-right: 10px; /* Space between label and dropdown */
+  }
+  
+  /* Dropdown styling */
+  nav select {
+    font-size: 14px; /* Adjust font size */
+    padding: 8px 12px; /* Add padding inside the dropdown */
+    border: 1px solid #ccc; /* Light border around dropdown */
+    border-radius: 6px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    color: #333; /* Text color */
+    outline: none; /* Remove focus outline */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: border-color 0.3s ease; /* Smooth border transition */
+  }
+  
+  /* Hover and focus styles for the dropdown */
+  nav select:hover,
+  nav select:focus {
+    border-color: #007bff; /* Blue border on hover/focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow on hover/focus */
+  }
+  
+  /* Dropdown option styling */
+  nav select option {
+    padding: 10px; /* Add padding inside options */
+  }
+  

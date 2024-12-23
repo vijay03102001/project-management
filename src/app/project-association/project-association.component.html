@@ -1,0 +1,39 @@
+<!-- po-association.component.html -->
+<div class="po-association">
+    <h3>Associate PO</h3>
+    <form (ngSubmit)="addPO()">
+      <label for="poNumber">PO Number</label>
+      <input id="poNumber" [(ngModel)]="po.poNumber" name="poNumber" type="number"required />
+  
+      <label for="value">Value</label>
+      <input id="value" [(ngModel)]="po.value" name="value" type="number" required />
+  
+      <label for="utilized">Utilized</label>
+      <input id="utilized" [(ngModel)]="po.utilized" name="utilized" type="number" required />
+  
+      <button type="submit">Add PO</button>
+    </form>
+  </div>
+
+  <!-- PO Table -->
+  <div class="po-list">
+    <h2>Associated POs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>PO Number</th>
+          <th>Value</th>
+          <th>Utilized</th>
+          <th>Remaining</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let po of pos">
+          <td>{{ po.poNumber }}</td>
+          <td>{{ po.value }}</td>
+          <td>{{ po.utilized }}</td>
+          <td>{{ po.value - po.utilized }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

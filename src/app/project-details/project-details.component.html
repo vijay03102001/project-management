@@ -1,0 +1,82 @@
+<div class="container mt-4">
+    <!-- Add or Update PO Form -->
+    <h3>{{ editIndex === null ? 'Add PO' : 'Edit PO' }}</h3>
+    <form (ngSubmit)="addOrUpdatePO()" #poForm="ngForm">
+      <div class="form-group">
+        <label for="poNumber">PO Number</label>
+        <input
+          type="number"
+          id="poNumber"
+          class="form-control"
+          [(ngModel)]="newPO.poNumber"
+          name="poNumber"
+          min="0"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="value">Value</label>
+        <input
+          type="number"
+          id="value"
+          class="form-control"
+          [(ngModel)]="newPO.value"
+          name="value"
+          min="0"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="utilized">Utilized</label>
+        <input
+          type="number"
+          id="utilized"
+          class="form-control"
+          [(ngModel)]="newPO.utilized"
+          min="0"
+          name="utilized"
+          [max]="newPO.value"
+          required
+        />
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="poForm.invalid">
+        {{ editIndex === null ? 'Submit' : 'Add' }}
+      </button>
+      <button type="button" class="btn btn-secondary ml-2" (click)="resetForm()">
+        Reset
+      </button>
+    </form>
+    <!-- PO Detail Table -->
+    <h3>PO Detail Table</h3>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>PO Number</th>
+          <th>Value</th>
+          <th>Utilized</th>
+          <th>Remaining</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let po of poList; let i = index">
+          <td>{{ po.poNumber }}</td>
+          <td>{{ po.value | currency }}</td>
+          <td>{{ po.utilized | currency }}</td>
+          <td>{{ po.value - po.utilized | currency }}</td>
+          <td>
+            <!-- Edit Button -->
+            <button class="btn btn-sm btn-warning" (click)="editPO(i)">Edit</button>
+            <!-- Delete Button -->
+            <button class="btn btn-sm btn-danger" (click)="deletePO(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    
+  </div>
+  
